@@ -9,7 +9,7 @@
 import Foundation
 
 struct Entry: Equatable, Codable {
-    let title:String
+    var title:String
     var bodyText: String
     let timeStamp: Date
     let identifier: String
@@ -21,5 +21,4 @@ struct Entry: Equatable, Codable {
         self.identifier = identifier
     }
 
-    //TODO: Might need to implement == function
 }

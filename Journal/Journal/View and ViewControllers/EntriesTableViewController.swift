@@ -14,10 +14,16 @@ class EntriesTableViewController: UITableViewController {
         super.viewDidLoad()
 
        //TEST
+        let title = "Created"
+        let body = "Hopefully this works!"
         let entryController = EntryController()
-        entryController.createEntry(withTitle: "TESTING", bodyText: "Hopefully this works!") { () -> Error? in
+        entryController.createEntry(withTitle: title, bodyText: body) { () -> Error? in
             return nil
         }
+        entryController.update(for: entryController.entries[0] , withTitle: "Updated: \(title)", bodyText: "Updated: \(body)") { () -> Error? in
+            return nil
+        }
+        
         //END TEST
     }
 
