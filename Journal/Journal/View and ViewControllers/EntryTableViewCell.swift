@@ -23,7 +23,10 @@ class EntryTableViewCell: UITableViewCell {
     
     var entry: Entry?{
         didSet{
-            updateViews()
+            
+                self.updateViews()
+
+            
         }
     }
 }

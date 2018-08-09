@@ -52,10 +52,13 @@ class EntryController {
                 let decodedDict = try decoder.decode([String: Entry].self, from: data)
                 let decodedEntries = Array(decodedDict.values)
                 self.entries = decodedEntries.sorted{ return $0.timeStamp < $1.timeStamp }
+                _ = completion()
             } catch {
                 NSLog("Error decoding: \(error)")
             }
+          
         }.resume()
+
     }
     
     func put(entry: Entry, completion: @escaping () -> Error?){
