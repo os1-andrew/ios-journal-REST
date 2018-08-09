@@ -53,7 +53,7 @@ class EntryController {
                 let decodedEntries = Array(decodedDict.values)
                 self.entries = decodedEntries.sorted{ return $0.timeStamp < $1.timeStamp }
             } catch {
-                
+                NSLog("Error decoding: \(error)")
             }
         }.resume()
     }

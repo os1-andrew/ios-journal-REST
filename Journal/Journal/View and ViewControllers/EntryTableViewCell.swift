@@ -11,8 +11,19 @@ import UIKit
 class EntryTableViewCell: UITableViewCell {
     
     func updateViews(){
-        
+        guard let entry = entry  else {return}
+        titleLabel.text = entry.title
+        dateLabel.text = entry.timeStamp.description
+        bodyLabel.text = entry.bodyText
     }
     
-     var entry: Entry?
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var bodyLabel: UILabel!
+    
+    var entry: Entry?{
+        didSet{
+            updateViews()
+        }
+    }
 }

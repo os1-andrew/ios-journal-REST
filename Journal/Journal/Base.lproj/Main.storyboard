@@ -71,6 +71,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="bodyLabel" destination="jFJ-tU-E28" id="o3w-FX-PVV"/>
+                                    <outlet property="dateLabel" destination="I8U-ph-Yxo" id="QQF-qv-QU2"/>
+                                    <outlet property="titleLabel" destination="6KQ-bk-Oth" id="Qkg-TV-7vb"/>
                                     <segue destination="Tai-Vt-1ZN" kind="show" identifier="ViewEntry" id="PmH-AO-HQc"/>
                                 </connections>
                             </tableViewCell>

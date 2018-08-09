@@ -15,4 +15,7 @@ class EntryDetailViewController: UIViewController {
     
     @IBOutlet weak var textViewLabel: UITextView!
     @IBOutlet weak var textLabel: UITextField!
+    
+    var entry: Entry?
+    var entryController: EntryController?
 }
