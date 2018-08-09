@@ -14,6 +14,8 @@
 		10C78733211CAA6E00524F2A /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C78732211CAA6E00524F2A /* EntriesTableViewController.swift */; };
 		10C78735211CACF200524F2A /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C78734211CACF200524F2A /* EntryTableViewCell.swift */; };
 		10C78737211CAF3400524F2A /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C78736211CAF3400524F2A /* EntryDetailViewController.swift */; };
+		10C78739211CB4ED00524F2A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C78738211CB4ED00524F2A /* Entry.swift */; };
+		10C7873C211CB7FD00524F2A /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C7873B211CB7FD00524F2A /* EntryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		10C78732211CAA6E00524F2A /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		10C78734211CACF200524F2A /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		10C78736211CAF3400524F2A /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		10C78738211CB4ED00524F2A /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		10C7873B211CB7FD00524F2A /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				10C78722211CA8E100524F2A /* Main.storyboard */,
+				10C7873A211CB4F400524F2A /* Model and ModelController */,
 				10C78731211CA8FA00524F2A /* View and ViewControllers */,
 				10C78730211CA8F200524F2A /* Resources */,
 			);
@@ -84,6 +89,15 @@
 				10C78736211CAF3400524F2A /* EntryDetailViewController.swift */,
 			);
 			path = "View and ViewControllers";
+			sourceTree = "<group>";
+		};
+		10C7873A211CB4F400524F2A /* Model and ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				10C78738211CB4ED00524F2A /* Entry.swift */,
+				10C7873B211CB7FD00524F2A /* EntryController.swift */,
+			);
+			path = "Model and ModelController";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +171,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10C7873C211CB7FD00524F2A /* EntryController.swift in Sources */,
+				10C78739211CB4ED00524F2A /* Entry.swift in Sources */,
 				10C78735211CACF200524F2A /* EntryTableViewCell.swift in Sources */,
 				10C78733211CAA6E00524F2A /* EntriesTableViewController.swift in Sources */,
 				10C78737211CAF3400524F2A /* EntryDetailViewController.swift in Sources */,

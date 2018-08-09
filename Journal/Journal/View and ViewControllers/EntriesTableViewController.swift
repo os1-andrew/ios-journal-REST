@@ -2,7 +2,7 @@
 //  EntriesTableViewController.swift
 //  Journal
 //
-//  Created by Andrew Dhan on 8/9/18.
+//  Created by Andrew Liao on 8/9/18.
 //  Copyright © 2018 Andrew Liao. All rights reserved.
 //
 
@@ -13,11 +13,12 @@ class EntriesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+       //TEST
+        let entryController = EntryController()
+        entryController.createEntry(withTitle: "TESTING", bodyText: "Hopefully this works!") { () -> Error? in
+            return nil
+        }
+        //END TEST
     }
 
     override func didReceiveMemoryWarning() {
