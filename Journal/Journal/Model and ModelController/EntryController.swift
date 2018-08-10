@@ -34,9 +34,13 @@ class EntryController {
         }
     }
     
+    //Delete Entry ONLY locally.
+    func delete(entry: Entry){
+        guard let index = entries.index(of:entry) else { return}
+        entries.remove(at: index)
+    }
     
     //MARK: - Networking
-    
     func fetchEntries(completion: @escaping () -> Error?){
         let url = baseURL.appendingPathExtension("json")
         URLSession.shared.dataTask(with: url) { (data, _, error) in
@@ -97,4 +101,29 @@ class EntryController {
         
         
     }
+    
+    func deleteEntry(entry: Entry, completion: @escaping (Error?) ->Void){
+        let url = baseURL
+            .appendingPathComponent(entry.identifier)
+            .appendingPathExtension("json")
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        
+        URLSession.shared.dataTask(with: request) { (_, _, error) in
+            if let error = error {
+                NSLog("Error deleting: \(error)")
+                return
+            }
+            self.delete(entry: entry)
+            completion(nil)
+        }.resume()
+    }
 }
+
+
+
+
+
+
+
+
