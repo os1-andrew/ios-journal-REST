@@ -41,7 +41,7 @@ class EntryController {
     }
     
     //MARK: - Networking
-    func fetchEntries(completion: @escaping () -> Error?){
+    func fetchEntries(completion: @escaping (Error?) -> Void){
         let url = baseURL.appendingPathExtension("json")
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
@@ -56,7 +56,7 @@ class EntryController {
                 let decodedDict = try decoder.decode([String: Entry].self, from: data)
                 let decodedEntries = Array(decodedDict.values)
                 self.entries = decodedEntries.sorted{ return $0.timeStamp < $1.timeStamp }
-                _ = completion()
+                completion(nil)
             } catch {
                 NSLog("Error decoding: \(error)")
             }

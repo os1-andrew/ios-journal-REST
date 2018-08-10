@@ -9,7 +9,12 @@
 import UIKit
 
 class EntryDetailViewController: UIViewController {
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateViews()
+    }
+    
     func updateViews(){
         if !isViewLoaded { return }
         
@@ -21,7 +26,7 @@ class EntryDetailViewController: UIViewController {
             textLabel.text = entry?.title
             textViewLabel.text = entry?.bodyText
         }
-
+        
         
     }
     
@@ -34,11 +39,17 @@ class EntryDetailViewController: UIViewController {
         
         if let entry = entry {
             entryController?.update(for: entry, withTitle: title, bodyText: bodyText) {
-                self.navigationController?.popViewController(animated: true)
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
+                
                 return nil }
         } else {
             entryController?.createEntry(withTitle: title, bodyText: bodyText){
-                self.navigationController?.popViewController(animated: true)
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
+                
                 return nil}
         }
         

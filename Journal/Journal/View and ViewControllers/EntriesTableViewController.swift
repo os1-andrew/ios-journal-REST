@@ -10,14 +10,15 @@ import UIKit
 
 class EntriesTableViewController: UITableViewController {
 
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        entryController.fetchEntries { () -> Error? in
+        entryController.fetchEntries { (error) in
+            if let error = error {
+                NSLog("Error fetching at viewWillAppear: \(error)")
+            }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            return nil
         }
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,7 +50,7 @@ class EntriesTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! EntryDetailViewController
+        guard let destinationVC = segue.destination as? EntryDetailViewController else {return}
         destinationVC.entryController = entryController
         
         if segue.identifier == "ViewEntry" {
